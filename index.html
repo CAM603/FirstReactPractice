@@ -18,11 +18,28 @@
                 name : 'Cam',
                 age : 20
             }
+            click = (event) => {
+                //console.log(event.target);
+                this.setState({
+                    name: 'Yoshi',
+                    age: 27
+                });
+                console.log(this.state)
+            }
+            mouseOver = (event) => {
+                console.log(event.target, event.pageX);
+            }
+            copy = (event) => {
+                console.log('Hey no copying!!!')
+            }
             render() {
                 return (
                     <div className="app-content">
                         <h1>Hey Ninja</h1>
                         <p>My name is: { this.state.name } and I am { this.state.age }</p>
+                        <button onClick={this.click}>Click Me</button>
+                        <button onMouseOver={this.mouseOver}>Hover Me</button>
+                        <p onCopy={this.copy}>What we think, we become</p>
                     </div>
                 )
             }
